@@ -4,9 +4,11 @@ import Home from './components/Home';
 import About from './components/About';
 import SinglePost from './components/SinglePost';
 import Post from './components/Post';
-import Project from './components/Project';
+import Project  from './components/Project';
 import Resume from './components/Resume';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar/Navbar-2'
+
+// import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 function App() {

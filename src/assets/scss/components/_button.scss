@@ -1,0 +1,37 @@
+.nav-btn {
+
+    background: color(yellow, base);
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+    white-space: nowrap;
+    outline: none;
+    min-width: 100px;
+    max-width: 200px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 14px 24px;
+    color: black;
+    font-size: 14px;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &.primary {
+        color: white;
+        background: $primary;
+        font-size: 20px;
+    }
+    &.big {
+        padding: 16px 40px
+
+
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+} 

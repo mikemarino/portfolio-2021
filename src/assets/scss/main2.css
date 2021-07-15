@@ -1,0 +1,154 @@
+/*
+This file is used to contain all abstracts imports.
+Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates:ital,wght@1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*
+Vendors contains any third-party stylesheets a project uses. For instance, if we wanted to use Bootstrap alongside our own custom Sass in a project, we'd download the Bootstrap stylesheet and place it here.
+*/
+/*
+base contains boilerplate used throughout an entire si te. This includes project-wide typography styles, and stylesheets that universally reset or normalize default CSS.
+*/
+/* Montserrat Alternates */
+/*
+This file is used to contain all component imports.
+Files inside this folder can contain specific element styles and layout. 
+*/
+nav {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  background-color: red;
+}
+
+nav .logo {
+  color: #FFFFFF;
+  font-style: italic;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+nav .navMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: -48px;
+}
+
+@media screen and (max-width: 768px) {
+  nav .navMenu {
+    display: none;
+  }
+}
+
+nav .navLink {
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+nav .menuBar {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav .menuBar {
+    display: block;
+    background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>');
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(-50%, 25%);
+            transform: translate(-50%, 25%);
+  }
+}
+
+.nav-btn {
+  background: #ffa949;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 24px;
+  white-space: nowrap;
+  outline: none;
+  min-width: 100px;
+  max-width: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  color: black;
+  font-size: 14px;
+}
+
+.nav-btn:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.nav-btn.primary {
+  color: white;
+  background: #0074D9;
+  font-size: 20px;
+}
+
+.nav-btn.big {
+  padding: 16px 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+}
+
+/* The Pages partial contains the styles for every individual page. Almost every page needs to have specific styles that are to be used only for that particular page. */
+/* Import Layout files */
+.home h1 {
+  color: red;
+}
+
+.home body {
+  background-color: #7FDBFF;
+}
+/*# sourceMappingURL=main2.css.map */
