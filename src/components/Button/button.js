@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
-export const Button = () => {
-    return <div className="nav-btn primary">Contact Us</div>
+export const Button = (props) => {
+    return <div className={`${props.className}`}>{props.text}{props.icon}</div>
 
 }
 

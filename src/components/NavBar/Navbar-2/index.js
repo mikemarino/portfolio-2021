@@ -14,7 +14,7 @@ const Navbar = () => {
                     <NavLink className="navLink" to={item.link} key={index} exact>{item.title}</NavLink>
             ))}
             </div>
-            <Button />
+            <Button text="Contact" className="nav-btn primary"/>
         </nav>
     )
 }
