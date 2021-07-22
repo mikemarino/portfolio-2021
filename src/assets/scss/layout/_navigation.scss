@@ -1,57 +1,63 @@
 nav {
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    z-index: 100;
-    position: fixed;
-    width: 100%;
-    
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 2rem;
+	z-index: 100;
+	position: fixed;
+	width: 100%;
 
-    
-    .logo {
-        color: $white;
-        font-style: italic;
-        font-size: 48px;
-        font-family: 'Montserrat Alternates', sans-serif;
-        
-    }
-    
-    .navMenu {
-        display: flex;
-        align-items: center;
-        margin-right: -48px;
+	.logo {
+		color: $white;
+		// font-style: italic;
+		font-size: 48px;
+		font-family: 'Montserrat Alternates', sans-serif;
+	}
 
-     @media screen and (max-width: 768px) {
-         display: none;
-    
-     }
-    }
-    .navLink {
-        color:$white;
-        display: flex;
-        align-items: center;
-        padding: 0 1rem;
-        height:100%;
-        cursor: pointer;
-        text-decoration: none;
+	.navMenu {
+		display: flex;
+		align-items: center;
+		margin-right: -48px;
+
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+	.navLink {
+		color: $white;
+		display: flex;
+		align-items: center;
+		padding: 0 1rem;
+		height: 100%;
+		cursor: pointer;
+		text-decoration: none;
+        a:link{
+            text-decoration: none;
         }
-    
-    .menuBar {
-        display: none;
-        @media screen and (max-width:768px) {
-            display: block;
-            background-image: url($burger-icon);
-            background-size: contain;
-            height: 40px;
-            width: 40px;
-            cursor: pointer;
-            position: absolute;
-            top: 0;
-            right: 0;
-            transform: translate(-50%, 25%)
-        }
+        a:visited {
+            color: $white;
+          }
+           &:hover {
+        transform: translateY(-3px);
     }
+	}
 
+	.menuBar {
+		display: none;
+		@media screen and (max-width: 768px) {
+			display: block;
+			background-image: url($burger-icon);
+			background-size: contain;
+			height: 40px;
+			width: 40px;
+			cursor: pointer;
+			position: absolute;
+			top: 0;
+			right: 0;
+			transform: translate(-50%, 25%);
+            
+		}
+       
+	}
+   
 }
-

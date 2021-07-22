@@ -3,21 +3,30 @@ import { menuData } from '../../data/MenuData';
 import { NavLink } from 'react-router-dom';
 import Button from '../Button/button';
 
-const Dropdown = () => {
+const Dropdown = ({ isOpen, toggle }) => {
 	return (
-		<div className='dropdownContainer'>
-			<h1>HEllo!!</h1>Hello!
+		<div
+			className='dropdownContainer'
+			style={{
+				opacity: isOpen ? '1' : '0',
+				top: isOpen ? '0' : '-100%',
+			}}
+			isOpen={isOpen}
+			onClick={toggle}
+		>
 			<div className='icon'>
-				<div className='closeIcon' />
+				<div className='closeIcon' onClick={toggle} />
 			</div>
 			<div className='dropdownWrapper'>
 				<div className='dropdownMenu'>
 					{menuData.map((item, index) => (
-                    <NavLink className="" to={item.link} key={index} exact>{item.title}</NavLink>
-            ))}
+						<NavLink className='dropdownLink' to={item.link} key={index} exact>
+							{item.title}
+						</NavLink>
+					))}
 				</div>
 			</div>
-			<Button text='Contact Us' />
+			<Button text='Contact' className='nav-btn btnWrap' />
 		</div>
 	);
 };

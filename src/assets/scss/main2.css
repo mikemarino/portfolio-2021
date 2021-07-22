@@ -21,6 +21,19 @@ Vendors contains any third-party stylesheets a project uses. For instance, if we
 /*
 base contains boilerplate used throughout an entire si te. This includes project-wide typography styles, and stylesheets that universally reset or normalize default CSS.
 */
+.wrapper {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* A media query for a large screen */
+@media (min-width: 1170px) {
+  .wrapper {
+    max-width: 1170px;
+  }
+}
+
 /* Montserrat Alternates */
 /*
 This file is used to contain all component imports.
@@ -42,7 +55,6 @@ nav {
 
 nav .logo {
   color: #FFFFFF;
-  font-style: italic;
   font-size: 48px;
   font-family: 'Montserrat Alternates', sans-serif;
 }
@@ -77,6 +89,19 @@ nav .navLink {
   text-decoration: none;
 }
 
+nav .navLink a:link {
+  text-decoration: none;
+}
+
+nav .navLink a:visited {
+  color: #FFFFFF;
+}
+
+nav .navLink:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
 nav .menuBar {
   display: none;
 }
@@ -98,7 +123,7 @@ nav .menuBar {
 }
 
 .nav-btn {
-  background: #ffa949;
+  background: #0074D9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,13 +142,13 @@ nav .menuBar {
   display: flex;
   align-items: center;
   padding: 14px 24px;
-  color: black;
+  color: #FFFFFF;
   font-size: 14px;
 }
 
 .nav-btn:hover {
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .nav-btn.primary {
@@ -132,58 +157,208 @@ nav .menuBar {
   font-size: 20px;
 }
 
-.nav-btn.big {
-  padding: 16px 40px;
-}
-
 @media screen and (max-width: 768px) {
-  .nav-btn {
+  .nav-btn.primary {
     display: none;
   }
 }
 
-.nav-btn {
+.nav-btn.big {
+  padding: 16px 40px;
+}
+
+.dropdownContainer {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
   background: #ffa949;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.3 ease-in-out;
+  transition: 0.3 ease-in-out;
+  opacity: 1;
+  top: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dropdownContainer .icon {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+  padding: 1rem 2rem;
+}
+
+.dropdownContainer .closeIcon {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .dropdownContainer .closeIcon {
+    display: block;
+    background-image: url('data:image/svg+xml;utf-8, <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="transparent"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="white" /></svg>');
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(-50%, 25%);
+            transform: translate(-50%, 25%);
+  }
+}
+
+.dropdownContainer .closeIcon:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.dropdownContainer .dropdownMenu {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (80px)[4];
+      grid-template-rows: repeat(4, 80px);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 480px) {
+  .dropdownContainer .dropdownMenu {
+    -ms-grid-rows: 4, 60px;
+        grid-template-rows: 4, 60px;
+  }
+}
+
+.dropdownContainer .dropdownLink {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 24px;
-  white-space: nowrap;
-  outline: none;
-  min-width: 100px;
-  max-width: 200px;
-  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.5rem;
   text-decoration: none;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  list-style: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.dropdownContainer .dropdownLink:hover {
+  color: #111111;
+}
+
+.dropdownContainer .btnWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  padding: 14px 24px;
-  color: black;
-  font-size: 14px;
-}
-
-.nav-btn:hover {
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
-}
-
-.nav-btn.primary {
-  color: white;
-  background: #0074D9;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 20px;
 }
 
-.nav-btn.big {
-  padding: 16px 40px;
+.section {
+  width: 100%;
+  height: 100%;
+  padding: 4rem 0rem;
+}
+
+.container {
+  padding: 3rem calc((100vw-1300px) / 2);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 800px;
+      grid-template-rows: 800px;
 }
 
 @media screen and (max-width: 768px) {
-  .nav-btn {
-    display: none;
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.columnLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  line-height: 1.4;
+  padding: 1rem 2rem;
+}
+
+.columnLeft h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+}
+
+.columnLeft p {
+  margin-bottom: 2rem;
+}
+
+.columnRight {
+  padding: 1rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .columnRight {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.columnRight img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .columnRight img {
+    width: 90%;
+    height: 90%;
   }
 }
 
